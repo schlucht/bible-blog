@@ -1,4 +1,5 @@
 import { Controls } from './Controls.js';
+import { Sensor } from './Sensor.js';
 
 class Car {
     constructor(x, y, width, height, color='black') {
@@ -14,16 +15,20 @@ class Car {
         this.friction = 0.05
         this.angle = 0
 
+        this.sensor = new Sensor(this)
         this.controls = new Controls()
     }
 
-    update() {
+    update( roadBorders) {
         this.#move()
+        this.sensor.update(roadBorders)
     }
+
     #move() {
         if (this.controls.forward) {
             this.speed += this.acceleration
         }
+
         if (this.controls.reverse) {
             this.speed -= this.acceleration
         }
@@ -31,15 +36,19 @@ class Car {
         if (this.speed > this.maxSpeed) {
             this.speed = this.maxSpeed
         }
+
         if (this.speed < -this.maxSpeed / 2) {
             this.speed = -this.maxSpeed / 2
         }
+
         if (this.speed > 0) {
             this.speed -= this.friction
         }
+
         if (this.speed < 0) {
             this.speed += this.friction
         }
+
         if (Math.abs(this.speed) < this.friction) {
             this.speed = 0
         }
@@ -72,6 +81,8 @@ class Car {
         ctx.fillStyle = this.color;
         ctx.fill();
         ctx.restore();
+
+        this.sensor.draw(ctx)
     }
 }
 
