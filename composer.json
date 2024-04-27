@@ -1,0 +1,19 @@
+{
+    "name": "ots/bible-blog",
+    "autoload": {
+        "psr-4": {
+            "Ots\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Schmid Lothar",
+            "email": "web@jagolo.ch"
+        }
+    ],
+    "require": {
+        "php": ">=8.1.0",
+        "firebase/php-jwt": "^6.10",
+        "altorouter/altorouter": "^2.0"        
+    }
+}
