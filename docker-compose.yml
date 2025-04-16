@@ -1,0 +1,15 @@
+services:
+  dbsocial:
+    image: mysql:latest
+    container_name: dbsocial
+    environment:
+      MYSQL_ROOT_PASSWORD: schlucht
+      MYSQL_DATABASE: schlucht
+      MYSQL_USER: schlucht
+      MYSQL_PASSWORD: schlucht
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+volumes:
+  dbdata:

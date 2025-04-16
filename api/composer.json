@@ -1,0 +1,19 @@
+{
+    "name": "ots/bible",
+    "description": "Bibel Blog und Biblelesepläne",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Ots\\Bible\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "schlucht",
+            "email": "web@jagolo.ch"
+        }
+    ],
+    "require": {
+        "phroute/phroute": "^2.2"
+    }
+}
