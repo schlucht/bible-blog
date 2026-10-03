@@ -1,0 +1,13 @@
+{{ template "base" .}}
+{{ define "title" }}
+    Home Page
+{{ end }}
+{{ define "content" }}
+{{ $datas := .Data.test }}
+{{ template "header" . }}
+<div class="container">
+    {{ range $datas }}
+        <button class="btn btn-success">{{ . }}</button>
+    {{ end }}
+</div>
+{{ end }}

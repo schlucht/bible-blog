@@ -1,0 +1,64 @@
+{{define "header"}}
+<style>
+    header {
+        display: flex;
+        flex: row;
+        justify-content: start;
+        align-items: center;
+        gap: 2rem;
+        background-color: var(--clr-bg-primary);
+        color: var(--clr-ff);
+        padding: 1rem 2rem;
+        position: relative;
+        top: 0;
+        left: 0%;
+        right: 0%;        
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0rem;
+            p {
+                color: var(--clr-ff-light);
+            }
+            img {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+        .navigation {
+            display: flex;
+            flex-direction: row;
+        }
+        .navigation ul {
+            display: flex;
+            flex-direction: row;   
+            background: yellow;           
+            gap: 2rem;
+
+            li a {
+                text-decoration: none;
+                color: var(--clr-ff-light);
+                font-size: 1.6rem;
+            }
+        }
+    }
+</style>
+<header>
+    <div class="brand">
+        <img src="/assets/images/jago-logo.svg">
+        <p>Jagolo</p>
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li class="nav-item">
+                <a href="/" class="nav-link activ" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+                <a href="/signin" class="nav-link" aria-current="page">Signin</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+{{end}}
