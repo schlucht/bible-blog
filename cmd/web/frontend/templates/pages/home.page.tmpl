@@ -5,9 +5,12 @@
 {{ define "content" }}
 {{ $datas := .Data.test }}
 {{ template "header" . }}
-<div class="container">
+<div class="border border-red-200 p-4">
     {{ range $datas }}
-        <button class="btn btn-success">{{ . }}</button>
+        <button class="border border-stone-400 hover:bg-stone-300 p-2 rounded-xl">{{ . }}</button><br>
     {{ end }}
 </div>
+<button class="p-3 rounded border-2 border-black" hx-get="/btn" hx-swap="outerHTML">
+    Klickmich
+</button>
 {{ end }}

@@ -22,7 +22,7 @@ stop:
 	@echo "Backend stopped..."
 	
 
-restart: stop build
+restart: stop build run
 	clear
 
 run: start

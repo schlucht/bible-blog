@@ -24,8 +24,9 @@ func routes(app *config.AppConfig) http.Handler {
 
 	if !app.MySqlLog {
 
-		mux.Get("/", h.Home)
 	}
+	mux.Get("/", h.Home)
+	mux.Get("/btn", h.Buttons)
 
 	mux.NotFound(h.NotFound)
 

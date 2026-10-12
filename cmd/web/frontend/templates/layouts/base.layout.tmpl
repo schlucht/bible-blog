@@ -8,19 +8,16 @@
     <title>
         {{ block "title" .}}
         {{ end }}
-    </title>
-    <link href="/assets/style.css"
-        rel="stylesheet"
-        type="text/css">
-    <script src="/assets/js/htmx.min.js"
-        defer></script>
+    </title>    
+    <script src="https://unpkg.com/htmx.org@2.0.0" integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="/assets/js/main.js"
         type="module"></script>
 
 </head>
 
 <body>
-    <main class="container">
+    <main>
         {{ block "content" .}}{{ end }}
     </main>
 </body>
