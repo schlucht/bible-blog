@@ -1,0 +1,14 @@
+package component
+
+import (
+	"fmt"
+	"time"
+)
+
+var date = fmt.Sprintf("%d/%d", time.Now().Month(), time.Now().Year())
+
+templ Footer() {
+	<footer>
+		<p class=""><strong>&copy;OTS</strong>-{ date }</p>
+	</footer>
+}

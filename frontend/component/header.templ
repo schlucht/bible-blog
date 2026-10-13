@@ -1,0 +1,23 @@
+package component
+
+import "github.com/schlucht/bibleblog/frontend/data"
+
+templ Header(nav []data.Navigation) {
+	<header>
+		<div class="">
+			<img src="assets/logos/mnr-green.png"/>
+			<div class="">
+				JaGoLo
+			</div>
+		</div>
+		<nav class="">
+			<ul class="flex gap-3">
+				for _ , item := range nav {
+					<li class={item.Class}>
+						<a href={item.Link}>{ item.Icon } { item.Content }</a>
+					</li>
+				}
+			</ul>
+		</nav>
+	</header>
+}

@@ -1,0 +1,24 @@
+package frontend
+
+import "github.com/schlucht/bibleblog/frontend/component"
+import "github.com/schlucht/bibleblog/frontend/data"
+
+// import "github.com/a-h/templ"
+templ Base(title string, page templ.Component) {
+	<!DOCTYPE html>
+	<html lang="de">
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<title>Homepage --- { title }</title>
+			<link href="assets/css/output.css" rel="stylesheet"/>
+		</head>
+		<body>
+			@component.Header(data.NavigationDatas())
+			<div class="w-screen bg-black text-white flex flex-column relative">
+				@page
+			</div>
+			@component.Footer()
+		</body>
+	</html>
+}
