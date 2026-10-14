@@ -16,6 +16,7 @@ func Routes(app *application.Application) http.Handler {
 	mux.Use(middleware.Logger)
 
 	mux.Get("/", h.Home)
+	mux.Get("/units", h.AllUnits)
 
 	mux.NotFound(h.NotFound)
 

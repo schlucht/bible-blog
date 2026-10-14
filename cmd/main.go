@@ -9,6 +9,7 @@ import (
 	"github.com/schlucht/bibleblog/cmd/application"
 	"github.com/schlucht/bibleblog/cmd/routes"
 	"github.com/schlucht/bibleblog/pkg/drivers"
+	"github.com/schlucht/bibleblog/pkg/migrate"
 )
 
 func main() {
@@ -22,8 +23,13 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+	mig := migrate.NewSQLiteMigrator(db, migrate.Migrations)
+	err = mig.Up()
+	if err != nil {
+		fmt.Println(err)
+	}
 	app := application.NewApp(port, session, db)
-	
+
 	routes := routes.Routes(&app)
 
 	srv := &http.Server{
